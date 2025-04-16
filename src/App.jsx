@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import {Routes, Route, Link} from 'react-router-dom';
 import './App.css'
+import RecipeList from './Components/RecipeList'
+import Nav from './Components/Nav'
+import Recipe from './Components/Recipe'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
+
 
   return (
-    <>
-    <h1>My Recipe Book</h1>
-      <p>Here are all of our recipes:</p>
+    <>  
+      <div id="navbar">
+      <Nav />
+      </div>
+      <div id="main-section">
+      <Routes>
+      <Route path="/" element={<RecipeList />} />
+      <Route path="/Recipe/:id" element={<Recipe />} />
+      </Routes>
+      </div>
+      <div>
+      <h1>Here Are Some Recipes!</h1>
+      <RecipeList  />
+      </div>
     </>
   )
 }
