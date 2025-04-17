@@ -7,9 +7,11 @@ import Recipe from './Components/Recipe'
 import SignUp from './Components/SignUp.jsx';
 import Auth from './Components/Auth.jsx';
 import LogIn from './Components/LogIn.jsx';
+import Favorites from './Components/Favorites.jsx';
 
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem("token") || null)
 
   return (
     <>  
@@ -20,9 +22,10 @@ function App() {
       <Routes>
       <Route path="/" element={<RecipeList />} />
       <Route path="/Recipe/:id" element={<Recipe />} />
-      <Route path="/SignUp" element={<SignUp />} />
-      <Route path="/Auth" element={<Auth />} />
-      <Route path="/LogIn" element={<LogIn />} />
+      <Route path="/SignUp" element={<SignUp token={token} setToken={setToken}/>} />
+      <Route path="/Auth" element={<Auth token={token} setToken={setToken}/>} />
+      <Route path="/LogIn" element={<LogIn token={token} setToken={setToken}/>} />
+      <Route path="/Favorites" element={<Favorites />} />
       </Routes>
       </div>
       <div>
