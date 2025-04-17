@@ -27,6 +27,9 @@ function RecipeList() {
 
   return (
     <>
+    <h1>Here Are Some Recipes!</h1>
+    <p>Click on a recipe to see ingredients and directions!
+        Users can save favorite recipes!</p>
     {
             recipes.map((recipe)=>
                 <div key={recipe.idMeal}>
