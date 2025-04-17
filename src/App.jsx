@@ -4,11 +4,12 @@ import './App.css'
 import RecipeList from './Components/RecipeList'
 import Nav from './Components/Nav'
 import Recipe from './Components/Recipe'
+import SignUp from './Components/SignUp.jsx';
+import Auth from './Components/Auth.jsx';
+import LogIn from './Components/LogIn.jsx';
 
 
 function App() {
- 
-
 
   return (
     <>  
@@ -19,10 +20,12 @@ function App() {
       <Routes>
       <Route path="/" element={<RecipeList />} />
       <Route path="/Recipe/:id" element={<Recipe />} />
+      <Route path="/SignUp" element={<SignUp />} />
+      <Route path="/Auth" element={<Auth />} />
+      <Route path="/LogIn" element={<LogIn />} />
       </Routes>
       </div>
       <div>
-      <h1>Here Are Some Recipes!</h1>
       <RecipeList  />
       </div>
     </>
