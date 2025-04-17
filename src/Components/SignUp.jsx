@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Auth from "./Auth";
 
-function SignUp({setToken}){
+function SignUp({token,setToken}){
     const [username, setUsername] =useState("")
     const [password, setPassword] =useState("")
 

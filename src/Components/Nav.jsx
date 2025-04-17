@@ -6,6 +6,7 @@ function Nav() {
           <Link to="/">Home </Link>
           <Link to="/SignUp">Sign Up!</Link>
           <Link to="/LogIn">Log In!</Link>
+          <Link to="/Favorites">Favorites</Link>
       </footer>
     );
   }

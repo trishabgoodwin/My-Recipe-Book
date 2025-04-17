@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Auth from "./Auth";
 
-function LogIn({}){
+function LogIn({token,setToken}){
     const [username, setUsername] =useState("")
     const [password, setPassword] =useState("")
-    const [token, setToken] = useState(null);
 
     async function handleSubmit(event){
         event.preventDefault();
