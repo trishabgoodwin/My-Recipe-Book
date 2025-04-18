@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-function RecipeList() {
+function RecipeList(favorite, setFavorite) {
   const [recipes, setRecipes] = useState([])
 
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ function RecipeList() {
 
       console.log(data);
       setRecipes(data)
+
     }
 
     getRecipes();
@@ -34,6 +35,7 @@ function RecipeList() {
             recipes.map((recipe)=>
                 <div key={recipe.idMeal}>
                     <h3 onClick={() => {handleClick(recipe.idMeal)}}>{recipe.strMeal}</h3>
+                    <img src={recipe?.strMealThumb} style={{height:"200px"}}/>
                 </div>
             )
         }
