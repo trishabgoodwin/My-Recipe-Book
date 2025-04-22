@@ -17,7 +17,6 @@ function RecipeList(favorite, setFavorite) {
       const res = await fetch("https://fsa-recipe.up.railway.app/api/recipes")
       const data = await res.json()
 
-      console.log(data);
       setRecipes(data)
 
     }
@@ -29,8 +28,9 @@ function RecipeList(favorite, setFavorite) {
   return (
     <>
     <h1>Here Are Some Recipes!</h1>
-    <p>Click on a recipe to see ingredients and directions!
-        Users can save favorite recipes!</p>
+    <p>Click on a recipe to see the Meal ID!<br/>
+        Search above using the ID for recipe instructions!<br/>
+        Users can save favorite recipes- Sign up today!</p>
     {
             recipes.map((recipe)=>
                 <div key={recipe.idMeal}>

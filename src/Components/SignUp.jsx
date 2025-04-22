@@ -4,6 +4,7 @@ import Auth from "./Auth";
 function SignUp({token,setToken}){
     const [username, setUsername] =useState("")
     const [password, setPassword] =useState("")
+    const [error, setError] =useState("")
 
     async function handleSubmit(event){
         event.preventDefault();
@@ -22,10 +23,15 @@ function SignUp({token,setToken}){
                 setToken(result.token)
         }catch(error){
             console.log(error)
+            setError(error.response?.data?.message || 'Network error. Please try again.');
         }
     }
     return (
         <>
+        <div className="error">
+            {error && <p>${error}</p>}
+        </div>
+        <div>
             <form onSubmit={handleSubmit}>
             <label>
             Username
@@ -33,7 +39,7 @@ function SignUp({token,setToken}){
                 value={username}
                 />
             </label>
-        <label>
+            <label>
             Password
             <input name="password" onChange={(event)=> setPassword(event.target.value)}
             value={password}
@@ -41,6 +47,7 @@ function SignUp({token,setToken}){
             </label>
             <button>Sign Up!</button>
             </form>
+        </div>  
         </>
     )
   }
