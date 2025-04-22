@@ -47,7 +47,7 @@ function LogIn({token,setToken}){
             <button>Login!</button>
             </form>
             <div>
-                <Auth />
+                <Auth token={token} />
             </div>
         </>
     );

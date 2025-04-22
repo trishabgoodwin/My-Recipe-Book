@@ -1,6 +1,7 @@
 import { Routes, Route, Link, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import Search from "./Search"
 
 function Recipe() {
 const [recipe, setRecipe] = useState([])
@@ -12,8 +13,6 @@ const navigate = useNavigate()
     const getRecipe = async () =>{
       const res = await fetch(`https://fsa-recipe.up.railway.app/api/recipes/${id}`)
       const data = await res.json()
-
-      console.log(data);
       setRecipe(data)
     }
 
@@ -37,8 +36,8 @@ const navigate = useNavigate()
   return (
     <>
         <div key={recipe.idMeal}>
-                    <h3>{recipe.strMeal}</h3>
-                    <p>{recipe.strInstructions}</p>
+                    <h3 className="selected">{recipe.strMeal}</h3>
+                    <p>Recipe ID#: {recipe.idMeal}</p>
                     <button onClick={()=>handleClick(recipe)}>Favorite</button>
                 </div>
         </>

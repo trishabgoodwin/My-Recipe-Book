@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #b96d6d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #670d33;
   text-decoration: inherit;
 }
 a:hover {
@@ -33,6 +33,9 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color:black;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: underline dashed black 3px;
 }
 
 button {
@@ -43,15 +46,64 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
+  cursor: grab;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ff6464;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+#navbar {
+  padding: 2em;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  background-color:moccasin;
+  gap: 25px;
+  font-size: 20px;
+  width: 900px;
+  text-decoration: underline wavy black;}
+
+h3{
+  color:black;
+  font-size: 30px;
+  text-decoration: underline wavy black;
+}
+
+p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.favorite{
+  background-color: #ca3636;
+  color: white;
+  width: 500px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  text-decoration: none;
+  border-style: inset;
+  border-width: 7px;
+  border-color: coral;  
+}
+
+.selected{
+  background-color: white;
+  color: black;
+  width: 500px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  text-decoration: none;
+  border-style: inset;
+  border-width: 7px;
+  border-color: coral;  
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +117,6 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
 }
+
